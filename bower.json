@@ -1,0 +1,8 @@
+{
+  "name": "public",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootstrap": "http://twitter.github.io/bootstrap/assets/bootstrap.zip",
+    "jquery-2.0.0": "http://code.jquery.com/jquery-2.0.0.js"
+  }
+}
