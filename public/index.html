@@ -26,6 +26,7 @@
       <li class="nav-header">Admin</a></li>
       <li><a href="#mockup-tags" data-target="#mockup-tags">Tags</a></li>
       <li><a href="#mockup-foods" data-target="#mockup-foods">Foods</a></li>
+      <li><a href="#mockup-food-scraps" data-target="#mockup-food-scraps">Scraps</a></li>
 
     </ul>
 
@@ -196,6 +197,82 @@
 
     </div>
 
+    <!-- /scraps/ Food Scraps -->
+    <div id="mockup-food-scraps">
+
+      <h2 class="pull-left">Food Scraps</h2>
+      <a href="#mockup-food-scraps-add" data-target="#mockup-food-scraps-add" class="pull-right btn">Add</a>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Url</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>http://johnwest.com.au/our-range/tuna/no-drain-tuna/no-drain-tuna-springwater-130g</td>
+            <td>
+              <a href="#mockup-food-scraps-run" data-target="#mockup-food-scraps-run" class="btn">Run</a>
+              <a href="#" class="btn">Edit</a>
+              <a href="#" class="btn">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <!-- /scraps/run/ Run food scraper -->
+    <div id="mockup-food-scraps-run">
+
+      <h2>Scrap Run</h2>
+      <h3>John West Tuna Blah blah blah</h3>
+
+      <dl class="dl-horizontal">
+        <dt>Url</dt>
+        <dd>http://johnwest.com.au/our-range/tuna/no-drain-tuna/no-drain-tuna-springwater-130g</dd>
+        <dt>Request Status</dt>
+        <dd>OK</dd>
+        <dt>Time</dt>
+        <dd>1200ms</dd>
+        <dt>Errors</dt>
+        <dd>None</dd>
+      </dl>
+
+      <h4>Preview</h4>
+      <pre>Name: John West blahb blah blah
+Calories: 120
+Carbs: 0
+Protein: 32
+Fat: 1</pre>
+
+      <a href="#" class="btn btn-primary">Apply To Food</a>
+
+    </div>
+
+    <!-- /scraps/add Add food scrap -->
+    <div id="mockup-food-scraps-add">
+
+      <h2>Add Food Scrap</h2>
+      <form>
+        <fieldset>
+          <label>Food</label>
+          <select name="food">
+            <option>John West Tuna</option>
+            <option>John West Salmon</option>
+          </select>
+          <label>Url</label>
+          <input type="text" name="url" class="input-xlarge" />
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form>
+
+    </div>
+
   </div>
 </div>
 </div>
@@ -208,6 +285,9 @@ $('a').click(function(e) {
   if ($(this).attr('data-target')) {
     $('#content').children().hide();
     var target = $(this).data('target');
+
+    $('.nav-list li').removeClass('active');
+    $(this).parent().toggleClass('active');
     $(target).show();
   }
 });
