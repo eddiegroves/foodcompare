@@ -8,21 +8,34 @@
 </head>
 <body>
 <div class="container-fluid">
+
 <h1>Food Compare</h1>
+
 <div class="row-fluid">
   <div class="span2">
+
+    <!-- Navigation -->
     <ul class="nav nav-list">
-      <li class="nav-header">Group 1</li>
-      <li><a href="#mockup-tag-view" data-target="#mockup-tag-view">Protein</li>
+
+      <!-- Tags -->
+      <li class="nav-header">Tags</li>
+      <li><a href="#mockup-tag-view" data-target="#mockup-tag-view">Tag Name</a></li>
       <li><a href="#">tag 2</a></li>
-      <li class="nav-header">Foods</li>
-      <li><a href="#">All</li>
-      <li><a href="#mockup-add" data-target="#mockup-add">Add</a></li>
+
+      <!-- Admin/editing -->
+      <li class="nav-header">Admin</a></li>
+      <li><a href="#mockup-tags" data-target="#mockup-tags">Tags</a></li>
+      <li><a href="#mockup-foods" data-target="#mockup-foods">Foods</a></li>
+
     </ul>
+
   </div>
   <div id="content" class="span10">
+
+    <!-- /tag/tag-name Tagged Food -->
     <div id="mockup-tag-view">
-    <h2>Protein</h2>
+
+    <h2>Tag Name</h2>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -53,45 +66,152 @@
         </tr>
       </tbody>
     </table>
+
     </div>
-    <div id="mockup-add" class="hide">
+
+    <!-- /tags Tags listing -->
+    <div id="mockup-tags">
+
+      <h2 class="pull-left">Tags</h2>
+      <a href="#mockup-add-tag" data-target="#mockup-add-tag" class="btn pull-right">Add</a>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Tag</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Tag Name</td>
+            <td>
+              <a href="#mockup-edit-tag" data-target="#mockup-edit-tag" class="btn">Edit</a>
+              <a href="#" class="btn">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <!-- /tags/add/1 Add Tag -->
+    <div id="mockup-add-tag">
+
+      <h2>Add Tag</h2>
+      <form>
+        <fieldset>
+          <label for="tag">Tag</label>
+          <input type="text" id="tag" name="tag" />
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Add Tag</button>
+      </form>
+
+    </div>
+
+    <!-- /tags/edit/1 Edit Tag -->
+    <div id="mockup-edit-tag">
+
+      <h2>Edit Tag</h2>
+      <form>
+        <fieldset>
+          <label for="tag">Tag</label>
+          <input type="text" id="tag" name="tag" />
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Update Tag</button>
+      </form>
+
+    </div>
+
+    <!-- /foods Food listing -->
+    <div id="mockup-foods">
+
+      <h2 class="pull-left">Foods</h2>
+      <a href="#mockup-add-food" data-target="#mockup-add-food" class="btn pull-right">Add</a>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Calories</th>
+            <th>Carbs</th>
+            <th>Protein</th>
+            <th>Fat</th>
+            <th>Tags</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>John West Tuna in Springwater No Drain 130g</td>
+            <td>120</td>
+            <td>0</td>
+            <td>29</td>
+            <td>1.2</td>
+            <td>Tag Name, Tag2</td>
+            <td>
+              <a href="#" class="btn">Edit</a>
+              <a href="#" class="btn">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <!-- /foods/add Add/edit food -->
+    <div id="mockup-add-food">
+
       <h2>Add Food</h2>
-        <form>
-          <fieldset>
-            <legend>Name</legend>
-            <label>Brand</label>
-            <input type="text" name="brand" />
-            <label>Product</label>
-            <input type="text" name="product" />
-          </fieldset>
-          <fieldset>
-            <legend>Contents</legend>
-            <label>Calories</label>
-            <input type="text" name="calories" />
-            <label>Carbs</label>
-            <input type="text" name="calories" />
-            <label>Protein</label>
-            <input type="text" name="calories" />
-            <label>Fat</label>
-            <input type="text" name="calories" />
-            <button type="submit" class="btn">Add Food</button>
-          </fieldset>
-        </form>
+      <form>
+        <fieldset>
+          <legend>Name</legend>
+          <label>Brand</label>
+          <input type="text" name="brand"/>
+          <label>Product</label>
+          <input type="text" name="product"/>
+        </fieldset>
+        <fieldset>
+          <legend>Contents</legend>
+          <label>Calories</label>
+          <input type="text" name="calories"/>
+          <label>Carbs</label>
+          <input type="text" name="calories"/>
+          <label>Protein</label>
+          <input type="text" name="calories"/>
+          <label>Fat</label>
+          <input type="text" name="calories"/>
+        </fieldset>
+        <fieldset>
+          <legend>Tagging</legend>
+          <label>Tags</label>
+          <input type="text" name="tags" />
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Add Food</button>
+      </form>
+
     </div>
+
   </div>
 </div>
 </div>
 <script src="assets/jquery-2.0.0/index.js"></script>
 <script src="assets/bootstrap/js/bootstrap.js"></script>
 <script>
+
 // Navigation links
-$('.nav a').click(function(e) { 
+$('a').click(function(e) { 
   if ($(this).attr('data-target')) {
     $('#content').children().hide();
     var target = $(this).data('target');
     $(target).show();
   }
 });
+
 // #URLs
 if (window.location.hash) {
   $('a[data-target=' + window.location.hash + ']').click();
