@@ -1,1 +1,32 @@
-﻿
+﻿<h2 class="pull-left">Foods</h2>
+@Html.ActionLink("Add", "Add", "Foods", routeValues: null, htmlAttributes: new { @class = "btn pull-right" })
+
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Calories</th>
+    <th>Carbs</th>
+    <th>Protein</th>
+    <th>Fat</th>
+    <th>Tags</th>
+    <th>Actions</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>John West Tuna in Springwater No Drain 130g</td>
+    <td>120</td>
+    <td>0</td>
+    <td>29</td>
+    <td>1.2</td>
+    <td>Tag Name, Tag2</td>
+    <td>
+      <a href="#" class="btn">Edit</a>
+      <a href="#" class="btn">Delete</a>
+    </td>
+  </tr>
+</tbody>
+</table>
