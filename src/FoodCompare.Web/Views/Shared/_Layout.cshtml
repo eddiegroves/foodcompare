@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Compare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="assets/lib/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<div class="container-fluid">
+    <h1>Food Compare</h1>
+
+    <div class="row-fluid">
+      <div class="span2">
+        <!-- Navigation -->
+        <ul class="nav nav-list">
+
+          <!-- Tags -->
+          <li class="nav-header">Tags</li>
+          <li><a href="#mockup-tag-view" data-target="#mockup-tag-view">Tag Name</a></li>
+          <li><a href="#">tag 2</a></li>
+
+          <!-- Admin/editing -->
+          <li class="nav-header">Admin</li>
+          <li><a href="#mockup-tags" data-target="#mockup-tags">Tags</a></li>
+          <li><a href="#mockup-foods" data-target="#mockup-foods">Foods</a></li>
+          <li><a href="#mockup-food-scraps" data-target="#mockup-food-scraps">Scraps</a></li>
+
+        </ul>
+      </div>
+      <div id="content" class="span10">
+          @RenderBody()
+      </div>
+    </div>
+</div>
+<script src="assets/lib/jquery-2.0.0/index.js"></script>
+<script src="assets/lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
