@@ -24,8 +24,8 @@
     <td>1.2</td>
     <td>Tag Name, Tag2</td>
     <td>
-      <a href="#" class="btn">Edit</a>
-      <a href="#" class="btn">Delete</a>
+      @Html.ActionLink("Edit", "Edit", "Foods", routeValues: null, htmlAttributes: new { @class = "btn" })
+      @Html.ActionLink("Delete", "Delete", "Foods", routeValues: null, htmlAttributes: new { @class = "btn" })
     </td>
   </tr>
 </tbody>
