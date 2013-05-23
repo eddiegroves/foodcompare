@@ -14,6 +14,12 @@ namespace FoodCompare.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Tagged",
+                url: "Tagged/{Name}",
+                defaults: new { controller = "Tagged", action = "Index" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Foods", action = "Index", id = UrlParameter.Optional }
