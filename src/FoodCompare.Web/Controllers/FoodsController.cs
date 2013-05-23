@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodCompare.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,13 @@ namespace FoodCompare.Web.Controllers
         public ActionResult Add()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Add(Food request)
+        {
+            // TODO: Persist to database
+            return View(request);
         }
 
         public ActionResult Edit()

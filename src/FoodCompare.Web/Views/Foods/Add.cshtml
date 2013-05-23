@@ -1,27 +1,29 @@
-﻿<h2>Add Food</h2>
-<form>
-<fieldset>
-  <legend>Name</legend>
-  <label>Brand</label>
-  <input type="text" name="brand"/>
-  <label>Product</label>
-  <input type="text" name="product"/>
-</fieldset>
-<fieldset>
-  <legend>Contents</legend>
-  <label>Calories</label>
-  <input type="text" name="calories"/>
-  <label>Carbs</label>
-  <input type="text" name="calories"/>
-  <label>Protein</label>
-  <input type="text" name="calories"/>
-  <label>Fat</label>
-  <input type="text" name="calories"/>
-</fieldset>
-<fieldset>
-  <legend>Tagging</legend>
-  <label>Tags</label>
-  <input type="text" name="tags" />
-</fieldset>
-<button type="submit" class="btn btn-primary">Add Food</button>
-</form>
+﻿@model FoodCompare.Web.Models.Food
+
+<h2>Add Food</h2>
+@using (Html.BeginForm("Add", "Foods")) {
+  <fieldset>
+    <legend>Name</legend>
+    @Html.LabelFor(m => m.Brand)
+    @Html.EditorFor(m => m.Brand)
+    @Html.LabelFor(m => m.Product)
+    @Html.EditorFor(m => m.Product)
+  </fieldset>
+  <fieldset>
+    <legend>Contents</legend>
+    @Html.LabelFor(m => m.Calories)
+    @Html.EditorFor(m => m.Calories)
+    @Html.LabelFor(m => m.Carbohydrate)
+    @Html.EditorFor(m => m.Carbohydrate)
+    @Html.LabelFor(m => m.Protein)
+    @Html.EditorFor(m => m.Protein)
+    @Html.LabelFor(m => m.Fat)
+    @Html.EditorFor(m => m.Fat)
+  </fieldset>
+  <fieldset>
+    <legend>Tagging</legend>
+    @Html.LabelFor(m => m.Tags)
+    @Html.EditorFor(m => m.Tags)
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Add Food</button>
+}
