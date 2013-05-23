@@ -1,0 +1,22 @@
+﻿<h2 class="pull-left">Tags</h2>
+@Html.ActionLink("Add", "Add", "Tags", routeValues: null, htmlAttributes: new { @class ="btn pull-right" })
+
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>Id</th>
+    <th>Tag</th>
+    <th>Actions</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>Tag Name</td>
+    <td>
+      @Html.ActionLink("Edit", "Edit", "Tags", routeValues: null, htmlAttributes: new { @class ="btn" })
+      @Html.ActionLink("Delete", "Delete", "Tags", routeValues: null, htmlAttributes: new { @class ="btn" })
+    </td>
+  </tr>
+</tbody>
+</table>
