@@ -1,4 +1,6 @@
-﻿<h2 class="pull-left">Foods</h2>
+﻿@model List<FoodCompare.Web.Models.Food>
+
+<h2 class="pull-left">Foods</h2>
 @Html.ActionLink("Add", "Add", "Foods", routeValues: null, htmlAttributes: new { @class = "btn pull-right" })
 
 <table class="table table-striped">
@@ -15,18 +17,19 @@
   </tr>
 </thead>
 <tbody>
+  @foreach (var food in Model) {
   <tr>
-    <td>1</td>
-    <td>John West Tuna in Springwater No Drain 130g</td>
-    <td>120</td>
-    <td>0</td>
-    <td>29</td>
-    <td>1.2</td>
-    <td>Tag Name, Tag2</td>
+    <td>@food.Id</td>
+    <td>@food.Brand @food.Product</td>
+    <td>@food.Calories</td>
+    <td>@food.Carbohydrate</td>
+    <td>@food.Protein</td>
+    <td>@food.Fat</td>
+    <td>@food.Tags</td>
     <td>
-      @Html.ActionLink("Edit", "Edit", "Foods", routeValues: null, htmlAttributes: new { @class = "btn" })
-      @Html.ActionLink("Delete", "Delete", "Foods", routeValues: null, htmlAttributes: new { @class = "btn" })
+      @Html.ActionLink("Edit", "Edit", "Foods", routeValues: new { id = food.Id }, htmlAttributes: new { @class = "btn" })
+      @Html.ActionLink("Delete", "Delete", "Foods", routeValues: new { id = food.Id }, htmlAttributes: new { @class = "btn" })
     </td>
-  </tr>
+  </tr>}
 </tbody>
 </table>
