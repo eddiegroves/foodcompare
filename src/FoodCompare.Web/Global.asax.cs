@@ -19,6 +19,12 @@ namespace FoodCompare.Web
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+        }
+
+        protected void Application_EndRequest(object sender, EventArgs e)
+        {
+            StructureMap.ObjectFactory.ReleaseAndDisposeAllHttpScopedObjects();
         }
     }
 }
