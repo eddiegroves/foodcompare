@@ -12,11 +12,11 @@ using ServiceStack.OrmLite.SqlServer;
 
 namespace FoodCompare.Web.Controllers
 {
-    public class FoodsController : Controller
+    public class FoodsController : BaseController
     {
         private readonly IDbConnection db;
 
-        public FoodsController(IDbConnection db)
+        public FoodsController(IDbConnection db) : base(db)
         {
             this.db = db;
         }

@@ -10,11 +10,11 @@ using FoodCompare.Web.Models;
 
 namespace FoodCompare.Web.Controllers
 {
-    public class TagsController : Controller
+    public class TagsController : BaseController
     {
         private readonly IDbConnection _db;
 
-        public TagsController(IDbConnection db)
+        public TagsController(IDbConnection db) : base(db)
         {
             _db = db;
         }

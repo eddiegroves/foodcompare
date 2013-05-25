@@ -1,8 +1,8 @@
 ﻿<ul class="nav nav-list">
-  <!-- Tags -->
   <li class="nav-header">Tags</li>
-  <li>@Html.ActionLink("Tag Name", "Index", "Tagged", new { Name = "tag-name" }, null)</li>
-  <li><a href="#">tag 2</a></li>
+  @foreach (var tag in (List<FoodCompare.Web.Models.Tag>)ViewBag.Tags) {
+  <li>@Html.ActionLink(tag.Name, "Index", "Tagged", new { Name = tag.Name}, null)</li>
+  }
 
   <!-- Admin/editing -->
   <li class="nav-header">Admin</li>

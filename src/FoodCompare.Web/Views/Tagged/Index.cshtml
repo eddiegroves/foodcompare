@@ -1,10 +1,9 @@
-﻿@model FoodCompare.Web.Models.Tag
+﻿@model List<FoodCompare.Web.Models.Food>
 
-<h2>@Model.Name</h2>
+<h2>@ViewBag.Tag.Name</h2>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Brand</th>
       <th>Name</th>
       <th>Calories</th>
       <th>Carbs</th>
@@ -13,21 +12,14 @@
     </tr>
   </thead>
   <tbody>
+    @foreach (var food in Model) {
     <tr>
-      <td>John West</td>
-      <td>No Drain Tuna Springwater 130g</td>
-      <td>131</td>
-      <td>0</td>
-      <td>29.6</td>
-      <td>1.4</td>
+      <td>@food.Brand @food.Product</td>
+      <td>@food.Calories</td>
+      <td>@food.Carbohydrate</td>
+      <td>@food.Protein</td>
+      <td>@food.Fat</td>
     </tr>
-    <tr>
-      <td>John West</td>
-      <td>No Drain Tuna Olive Oil 130g</td>
-      <td>141</td>
-      <td>0</td>
-      <td>29.6</td>
-      <td>6.4</td>
-    </tr>
+    }
   </tbody>
 </table>
