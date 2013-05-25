@@ -1,8 +1,12 @@
-﻿<h2>Add Tag</h2>
-<form>
-<fieldset>
-  <label for="tag">Tag</label>
-  <input type="text" id="tag" name="tag" />
-</fieldset>
-<button type="submit" class="btn btn-primary">Add Tag</button>
-</form>
+﻿@model FoodCompare.Web.Models.Tag
+
+<h2>Add Tag</h2>
+
+@using (Html.BeginForm("Add", "Tags")) {
+  <fieldset>
+    <legend></legend>
+    @Html.LabelFor(m => m.Name)
+    @Html.EditorFor(m => m.Name)
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Add Tag</button>
+}

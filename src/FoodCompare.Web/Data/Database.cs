@@ -25,6 +25,7 @@ namespace FoodCompare.Web.Data
             using (var db = Database.Factory.OpenDbConnection())
             {
                 db.DropAndCreateTable<Food>();
+                db.DropAndCreateTable<Tag>();
             }
         }
 
@@ -51,6 +52,12 @@ namespace FoodCompare.Web.Data
                     Carbohydrate = "0",
                     Protein = "26.5",
                     Fat = "6.2"
+                });
+
+                db.InsertAll(new [] {
+                    new Tag { Name = "Tag One" },
+                    new Tag { Name = "Tag-2" },
+                    new Tag { Name = "Tag3" }
                 });
             }
         }

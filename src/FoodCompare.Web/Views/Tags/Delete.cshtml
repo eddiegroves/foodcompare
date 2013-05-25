@@ -1,1 +1,7 @@
-﻿<h2>Delete Tag</h2>
+﻿@model FoodCompare.Web.Models.Tag
+
+<h2>Delete Tag</h2>
+
+@using (Html.BeginForm("Delete", "Tags")) {
+    <button class="btn"><strong>Delete</strong> @Model.Name</button>
+}
