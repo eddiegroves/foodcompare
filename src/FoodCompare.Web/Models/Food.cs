@@ -17,5 +17,6 @@ namespace FoodCompare.Web.Models
         public string Protein { get; set; }
         public string Fat { get; set; }
         public string Tags { get; set; }
+        public string Price { get; set; }
     }
 }

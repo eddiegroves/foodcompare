@@ -12,6 +12,7 @@
     <th>Carbs</th>
     <th>Protein</th>
     <th>Fat</th>
+    <th>Price</th>
     <th>Tags</th>
     <th>Actions</th>
   </tr>
@@ -25,6 +26,7 @@
     <td>@food.Carbohydrate</td>
     <td>@food.Protein</td>
     <td>@food.Fat</td>
+    <td>@food.Price</td>
     <td>@food.Tags</td>
     <td>
       @Html.ActionLink("Edit", "Edit", "Foods", routeValues: new { id = food.Id }, htmlAttributes: new { @class = "btn" })

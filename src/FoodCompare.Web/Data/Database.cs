@@ -41,7 +41,8 @@ namespace FoodCompare.Web.Data
                     Calories = "130",
                     Carbohydrate = "0",
                     Protein = "26.5",
-                    Fat = "1.2"
+                    Fat = "1.2",
+                    Tags = "Tag One"
                 });
 
                 db.Insert(new Food
@@ -51,7 +52,8 @@ namespace FoodCompare.Web.Data
                     Calories = "160",
                     Carbohydrate = "0",
                     Protein = "26.5",
-                    Fat = "6.2"
+                    Fat = "6.2",
+                    Tags = "Tag One, Tag3"
                 });
 
                 db.InsertAll(new [] {

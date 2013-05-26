@@ -3,10 +3,7 @@ module.exports = function(grunt) {
     watch: {
       options: { livereload: true },
       html: {
-        files: ['public/index.html']
-      },
-      css: {
-        files: ['public/assets/**/*.css']
+        files: ['src/FoodCompare.Web/Views/**/*.cshtml']
       }
     }
   });

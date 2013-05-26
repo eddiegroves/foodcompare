@@ -1,28 +1,56 @@
 ﻿@model FoodCompare.Web.Models.Food
 
-@using (Html.BeginForm("Edit", "Foods")) {
-  <fieldset>
-    <legend>Name</legend>
-    @Html.LabelFor(m => m.Brand)
-    @Html.EditorFor(m => m.Brand)
-    @Html.LabelFor(m => m.Product)
-    @Html.EditorFor(m => m.Product)
-  </fieldset>
-  <fieldset>
-    <legend>Contents</legend>
-    @Html.LabelFor(m => m.Calories)
-    @Html.EditorFor(m => m.Calories)
-    @Html.LabelFor(m => m.Carbohydrate)
-    @Html.EditorFor(m => m.Carbohydrate)
-    @Html.LabelFor(m => m.Protein)
-    @Html.EditorFor(m => m.Protein)
-    @Html.LabelFor(m => m.Fat)
-    @Html.EditorFor(m => m.Fat)
-  </fieldset>
-  <fieldset>
-    <legend>Tagging</legend>
-    @Html.LabelFor(m => m.Tags)
-    @Html.EditorFor(m => m.Tags)
-  </fieldset>
-  <button type="submit" class="btn btn-primary">Edit Food</button>
-}
+<div class="row">
+  @using (Html.BeginForm("Edit", "Foods")) {
+  <div class="span5">
+    <fieldset>
+      <legend>Name</legend>
+      @Html.LabelFor(m => m.Brand)
+      @Html.EditorFor(m => m.Brand)
+      @Html.LabelFor(m => m.Product)
+      @Html.EditorFor(m => m.Product)
+    </fieldset>
+    <fieldset>
+      <legend>Contents</legend>
+      @Html.LabelFor(m => m.Calories)
+      @Html.EditorFor(m => m.Calories)
+      @Html.LabelFor(m => m.Carbohydrate)
+      @Html.EditorFor(m => m.Carbohydrate)
+      @Html.LabelFor(m => m.Protein)
+      @Html.EditorFor(m => m.Protein)
+      @Html.LabelFor(m => m.Fat)
+      @Html.EditorFor(m => m.Fat)
+    </fieldset>
+    <fieldset>
+      <legend>Tagging</legend>
+      @Html.LabelFor(m => m.Tags)
+      @Html.EditorFor(m => m.Tags)
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Edit Food</button>
+  </div>
+  <div class="span5">
+    <fieldset>
+      <legend>Price</legend>
+      @Html.LabelFor(m => m.Price)
+      @Html.EditorFor(m => m.Price)
+    </fieldset>
+    <p><button form="woolworths-search" class="btn btn-small">Lookup price on Woolworths</button></p>
+    <p><button form="coles-search" class="btn btn-small">Lookup price on Coles</button></p>
+  </div>
+  }
+</div>
+
+<form id="woolworths-search" method="GET" target="_blank" action="http://www2.woolworthsonline.com.au/Shop/SearchProducts">
+  <input type="hidden" name="search" value="@Model.Brand @Model.Product"/>
+</form>
+
+<form id="coles-search" method="GET" target="_blank" action="http://www.colesonline.com.au/webapp/wcs/stores/servlet/CMLForwardViewCmd">
+  <input type="hidden" name="viewName" value="SearchResultsView"/>
+  <input type="hidden" name="langId" value="-1"/>
+  <input type="hidden" name="storeId" value="11554"/>
+  <input type="hidden" name="catalogId" value="10552"/>
+  <input type="hidden" name="beginIndex" value="0"/>
+  <input type="hidden" name="searchTermScope" value="4"/>
+  <input type="hidden" name="searchTerm" value="@Model.Brand @Model.Product"/>
+</form>
+
