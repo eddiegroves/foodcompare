@@ -142,6 +142,7 @@
     <Compile Include="Controllers\DatabaseController.cs" />
     <Compile Include="Controllers\ExportController.cs" />
     <Compile Include="Controllers\FoodsController.cs" />
+    <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\TaggedController.cs" />
     <Compile Include="Controllers\TagsController.cs" />
     <Compile Include="Data\Database.cs" />

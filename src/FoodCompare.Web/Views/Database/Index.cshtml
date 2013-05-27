@@ -9,3 +9,23 @@
 @using (Html.BeginForm("Foods", "Export")) {
   <button class="btn">Export <strong>Foods</strong></button>
 }
+
+<h3>Import</h3>
+
+@using (Html.BeginForm("Tags", "Import", method: FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" })) {
+  <label for="TagsFile"></label>
+  <input id="TagsFile" name="file" type="file"/>
+  <button class="btn">Import <strong>Tags</strong></button>
+}
+
+@using (Html.BeginForm("Foods", "Import", method: FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" })) {
+  <label for="FoodsFile"></label>
+  <input id="FoodsFile" name="file" type="file"/>
+  <button class="btn">Import <strong>Foods</strong></button>
+}
+
+<h3>Clear Database</h3>
+
+@using (Html.BeginForm("Clear", "Database")) {
+  <button class="btn">Clear Database</button>
+}
