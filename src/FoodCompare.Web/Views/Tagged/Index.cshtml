@@ -1,6 +1,6 @@
 ﻿@model FoodCompare.Web.Models.TaggedFoodViewModel
 
-<h2>@Model.TagName</h2>
+<h2>@Model.Tag.Name</h2>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -21,8 +21,8 @@
       <td>@Html.DisplayFor(_ => food.Protein)</td>
       <td>@Html.DisplayFor(_ => food.Fat)</td>
       <td>@Html.DisplayFor(_ => food.Price)</td>
-    </tr>
-    }
+    </tr> }
+    @if (Model.Tag.ShowTotal) {
     <tr>
       <td>@Model.Totals.Product</td>
       <td>@Html.DisplayFor(_ => Model.Totals.Calories)</td>
@@ -30,6 +30,6 @@
       <td>@Html.DisplayFor(_ => Model.Totals.Protein)</td>
       <td>@Html.DisplayFor(_ => Model.Totals.Fat)</td>
       <td>@Html.DisplayFor(_ => Model.Totals.Price)</td>
-    </tr>
+    </tr> }
   </tbody>
 </table>

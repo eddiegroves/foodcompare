@@ -57,7 +57,7 @@ namespace FoodCompare.Web.Data
                 });
 
                 db.InsertAll(new [] {
-                    new Tag { Name = "Tag One" },
+                    new Tag { Name = "Tag One", ShowTotal = true },
                     new Tag { Name = "Tag-2" },
                     new Tag { Name = "Tag3" }
                 });

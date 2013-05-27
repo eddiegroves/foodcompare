@@ -7,6 +7,10 @@
     <legend></legend>
     @Html.LabelFor(m => m.Name)
     @Html.EditorFor(m => m.Name)
+    <label class="checkbox">
+      @Html.EditorFor(m => m.ShowTotal)
+      @Html.DisplayNameFor(m => m.ShowTotal)
+    </label>
   </fieldset>
   <button type="submit" class="btn btn-primary">Edit Tag</button>
 }

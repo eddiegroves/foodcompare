@@ -18,12 +18,13 @@ namespace FoodCompare.Web.Controllers
             _db = db;
         }
 
-        public ActionResult Index(Tag request)
+        public ActionResult Index(string name)
         {
-            var foods = _db.Select<Food>(p => p.Tags.Contains(request.Name));
+            var tag = _db.First<Tag>(p => p.Name == name);
+            var foods = _db.Select<Food>(p => p.Tags.Contains(name));
             return View(new TaggedFoodViewModel
             {
-                TagName =  request.Name,
+                Tag = tag,
                 Foods = foods,
                 Totals = new Food
                 {
