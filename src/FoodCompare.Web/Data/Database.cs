@@ -38,10 +38,10 @@ namespace FoodCompare.Web.Data
                 {
                     Brand = "John West",
                     Product = "Tuna in Springwater",
-                    Calories = "130",
-                    Carbohydrate = "0",
-                    Protein = "26.5",
-                    Fat = "1.2",
+                    Calories = 130,
+                    Carbohydrate = 0,
+                    Protein = 26.5M,
+                    Fat = 1.2M,
                     Tags = "Tag One"
                 });
 
@@ -49,10 +49,10 @@ namespace FoodCompare.Web.Data
                 {
                     Brand = "John West",
                     Product = "Tuna in Olive Oil",
-                    Calories = "160",
-                    Carbohydrate = "0",
-                    Protein = "26.5",
-                    Fat = "6.2",
+                    Calories = 160,
+                    Carbohydrate = 0,
+                    Protein = 26.5M,
+                    Fat = 6.2M,
                     Tags = "Tag One, Tag3"
                 });
 

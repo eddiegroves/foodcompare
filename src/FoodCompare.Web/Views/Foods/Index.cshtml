@@ -22,11 +22,11 @@
   <tr>
     <td>@food.Id</td>
     <td>@food.Brand @food.Product</td>
-    <td>@food.Calories</td>
-    <td>@food.Carbohydrate</td>
-    <td>@food.Protein</td>
-    <td>@food.Fat</td>
-    <td>@food.Price</td>
+    <td>@Html.DisplayFor(_ => food.Calories)</td>
+    <td>@Html.DisplayFor(_ => food.Carbohydrate)</td>
+    <td>@Html.DisplayFor(_ => food.Protein)</td>
+    <td>@Html.DisplayFor(_ => food.Fat)</td>
+    <td>@Html.DisplayFor(_ => food.Price)</td>
     <td>@food.Tags</td>
     <td>
       @Html.ActionLink("Edit", "Edit", "Foods", routeValues: new { id = food.Id }, htmlAttributes: new { @class = "btn" })

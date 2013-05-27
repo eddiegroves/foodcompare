@@ -1,6 +1,6 @@
-﻿@model List<FoodCompare.Web.Models.Food>
+﻿@model FoodCompare.Web.Models.TaggedFoodViewModel
 
-<h2>@ViewBag.Tag.Name</h2>
+<h2>@Model.TagName</h2>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -13,15 +13,23 @@
     </tr>
   </thead>
   <tbody>
-    @foreach (var food in Model) {
+    @foreach (var food in Model.Foods) {
     <tr>
       <td>@food.Brand @food.Product</td>
-      <td>@food.Calories</td>
-      <td>@food.Carbohydrate</td>
-      <td>@food.Protein</td>
-      <td>@food.Fat</td>
-      <td>@food.Price</td>
+      <td>@Html.DisplayFor(_ => food.Calories)</td>
+      <td>@Html.DisplayFor(_ => food.Carbohydrate)</td>
+      <td>@Html.DisplayFor(_ => food.Protein)</td>
+      <td>@Html.DisplayFor(_ => food.Fat)</td>
+      <td>@Html.DisplayFor(_ => food.Price)</td>
     </tr>
     }
+    <tr>
+      <td>@Model.Totals.Product</td>
+      <td>@Html.DisplayFor(_ => Model.Totals.Calories)</td>
+      <td>@Html.DisplayFor(_ => Model.Totals.Carbohydrate)</td>
+      <td>@Html.DisplayFor(_ => Model.Totals.Protein)</td>
+      <td>@Html.DisplayFor(_ => Model.Totals.Fat)</td>
+      <td>@Html.DisplayFor(_ => Model.Totals.Price)</td>
+    </tr>
   </tbody>
 </table>

@@ -148,6 +148,7 @@
     </Compile>
     <Compile Include="Models\Food.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\TaggedFoodViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
