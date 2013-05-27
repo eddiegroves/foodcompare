@@ -13,19 +13,36 @@
 <h3>Import</h3>
 
 @using (Html.BeginForm("Tags", "Import", method: FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" })) {
-  <label for="TagsFile"></label>
-  <input id="TagsFile" name="file" type="file"/>
-  <button class="btn">Import <strong>Tags</strong></button>
+  <label for="TagsFile">Tags</label>
+  <button id="TagsFile" class="btn file-button">Choose File</button>
+  <input class="hide" name="file" type="file"/>
+  <button class="btn file-submit" disabled="disabled">Import <strong></strong></button>
 }
 
 @using (Html.BeginForm("Foods", "Import", method: FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" })) {
-  <label for="FoodsFile"></label>
-  <input id="FoodsFile" name="file" type="file"/>
-  <button class="btn">Import <strong>Foods</strong></button>
+  <label for="PostsFile">Foods</label>
+  <button id="PostsFile" class="btn file-button">Choose File</button>
+  <input class="hide" name="file" type="file"/>
+  <button class="btn file-submit" disabled="disabled">Import <strong></strong></button>
 }
 
 <h3>Clear Database</h3>
 
 @using (Html.BeginForm("Clear", "Database")) {
   <button class="btn">Clear Database</button>
+}
+
+@section script {
+<script>
+  $('.file-button').on('click', function(e) {
+    e.preventDefault();
+    $(this).siblings('input[type=file]').trigger('click');
+  });
+
+  $('input[type=file]').change(function() {
+    $(this).siblings('.file-submit')
+      .prop('disabled', false)
+      .find('strong').text(this.files[0].name);
+  });
+</script>
 }
