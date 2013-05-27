@@ -139,6 +139,7 @@
   <ItemGroup>
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ExportController.cs" />
     <Compile Include="Controllers\FoodsController.cs" />
     <Compile Include="Controllers\TaggedController.cs" />
     <Compile Include="Controllers\TagsController.cs" />
