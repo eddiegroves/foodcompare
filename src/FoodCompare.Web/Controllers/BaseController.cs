@@ -10,6 +10,11 @@ namespace FoodCompare.Web.Controllers
     {
         private readonly IDbConnection _db;
 
+        public BaseController()
+        {
+            
+        }
+
         public BaseController(IDbConnection db)
         {
             _db = db;
