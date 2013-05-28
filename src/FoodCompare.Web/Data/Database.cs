@@ -6,6 +6,7 @@ using System.Web;
 using ServiceStack.OrmLite;
 using ServiceStack.OrmLite.SqlServer;
 using FoodCompare.Web.Models;
+using System.Configuration;
 
 namespace FoodCompare.Web.Data
 {
@@ -14,9 +15,19 @@ namespace FoodCompare.Web.Data
         private const string connectionString =
             @"Data Source=(localdb)\v11.0;Integrated Security=True;Initial Catalog=FoodCompare";
 
+        public static string ConnectionString
+        {
+            get
+            {
+                if (ConfigurationManager.ConnectionStrings["SQLSERVER_CONNECTION_STRING"] != null)
+                    return ConfigurationManager.ConnectionStrings["SQLSERVER_CONNECTION_STRING"].ConnectionString;
+                else return connectionString;
+            }
+        }
+
         public static IDbConnectionFactory Factory
         {
-            get { return new OrmLiteConnectionFactory(connectionString, SqlServerDialect.Provider); }
+            get { return new OrmLiteConnectionFactory(ConnectionString, SqlServerDialect.Provider); }
         }
 
         // Creates FoodCompare database schema
