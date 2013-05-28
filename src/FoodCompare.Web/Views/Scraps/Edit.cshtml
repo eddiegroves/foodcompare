@@ -1,0 +1,15 @@
+﻿@model FoodCompare.Web.Models.Scrap
+@{
+  var foods = ViewBag.Foods as List<FoodCompare.Web.Models.Food>;
+}
+
+<h2>Add Food Scrap</h2>
+@using(Html.BeginForm("Edit", "Scraps")) {
+  <fieldset>
+    <label>Food</label>
+    @Html.DropDownList("FoodId", foods.Select(f => new SelectListItem { Value = f.Id.ToString(), Text = f.Brand + " " + f.Product, Selected = Model.FoodId == f.Id}))
+    @Html.LabelFor(m => m.Url)
+    @Html.TextBoxFor(m => m.Url, htmlAttributes: new { @class = "input-xlarge" })
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Edit</button>
+}

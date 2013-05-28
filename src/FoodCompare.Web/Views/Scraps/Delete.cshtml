@@ -1,0 +1,8 @@
+﻿@model FoodCompare.Web.Models.Scrap
+
+<h2>Delete Scrap</h2>
+
+@using (Html.BeginForm("Delete", "Scraps")) {
+  @Html.HiddenFor(m => m.Id)
+  <button class="btn">Delete <strong>@Model.Url</strong></button> 
+}

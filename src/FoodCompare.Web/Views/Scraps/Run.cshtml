@@ -1,0 +1,27 @@
+﻿@model FoodCompare.Web.Models.Scrap
+@{
+  var food = ViewBag.Food as FoodCompare.Web.Models.Food;
+}
+
+<h2>Scrap Run</h2>
+<h3>@food.Brand @food.Product</h3>
+
+<dl class="dl-horizontal">
+  <dt>Url</dt>
+  <dd>@Model.Url</dd>
+  <dt>Request Status</dt>
+  <dd>OK</dd>
+  <dt>Time</dt>
+  <dd>1200ms</dd>
+  <dt>Errors</dt>
+  <dd>None</dd>
+</dl>
+
+<h4>Preview</h4>
+<pre>Name: John West blahb blah blah
+Calories: 120
+Carbs: 0
+Protein: 32
+Fat: 1</pre>
+
+<a href="#" class="btn btn-primary">Apply To Food</a>

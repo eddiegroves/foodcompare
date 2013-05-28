@@ -1,0 +1,28 @@
+﻿@model List<FoodCompare.Web.Models.Scrap>
+
+<h2 class="pull-left">Food Scraps</h2>
+@Html.ActionLink("Add", "Add", "Scraps", routeValues: null, htmlAttributes: new { @class = "pull-right btn" })
+
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>Id</th>
+    <th>Food Id</th>
+    <th>Url</th>
+    <th>Actions</th>
+  </tr>
+</thead>
+<tbody>
+  @foreach (var scrap in Model) {
+  <tr>
+    <td>@scrap.Id</td>
+    <td>@scrap.FoodId</td>
+    <td>@scrap.Url</td>
+    <td>
+      @Html.ActionLink("Run", "Run", "Scraps", routeValues: new { scrap.Id }, htmlAttributes: new { @class = "btn" })
+      @Html.ActionLink("Edit", "Edit", "Scraps", routeValues: new { scrap.Id }, htmlAttributes: new { @class = "btn" })
+      @Html.ActionLink("Delete", "Delete", "Scraps", routeValues: new { scrap.Id }, htmlAttributes: new { @class = "btn" })
+    </td>
+  </tr>}
+</tbody>
+</table>

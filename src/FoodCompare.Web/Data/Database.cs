@@ -26,6 +26,7 @@ namespace FoodCompare.Web.Data
             {
                 db.DropAndCreateTable<Food>();
                 db.DropAndCreateTable<Tag>();
+                db.DropAndCreateTable<Scrap>();
             }
         }
 
@@ -60,6 +61,12 @@ namespace FoodCompare.Web.Data
                     new Tag { Name = "Tag One", ShowTotal = true },
                     new Tag { Name = "Tag-2" },
                     new Tag { Name = "Tag3" }
+                });
+
+                db.Insert(new Scrap
+                {
+                    FoodId = db.First<Food>(p => p.Product.Contains("Springwater")).Id,
+                    Url = "http://johnwest.com.au/our-range/tuna/no-drain-tuna/no-drain-tuna-springwater-130g"
                 });
             }
         }
