@@ -19,6 +19,8 @@ namespace FoodCompare.Web.Data
         {
             get
             {
+                if (ConfigurationManager.AppSettings["SQLSERVER_CONNECTION_STRING"] != null)
+                    return ConfigurationManager.AppSettings["SQLSERVER_CONNECTION_STRING"];
                 if (ConfigurationManager.ConnectionStrings["SQLSERVER_CONNECTION_STRING"] != null)
                     return ConfigurationManager.ConnectionStrings["SQLSERVER_CONNECTION_STRING"].ConnectionString;
                 else return connectionString;
