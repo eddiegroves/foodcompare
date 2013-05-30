@@ -231,9 +231,7 @@
     <Content Include="Views\Database\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Error.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
+<<<<<<< HEAD
     <Content Include="Views\Scraps\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Scraps\Run.cshtml" />
+=======
+    <Content Include="Views\Shared\Error.cshtml" />
+>>>>>>> deploy-to-apphb
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

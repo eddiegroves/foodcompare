@@ -10,6 +10,10 @@ namespace FoodCompare.Web.Controllers
 {
     public class DatabaseController : BaseController
     {
+        public DatabaseController()
+        { 
+        }
+
         public DatabaseController(IDbConnection db) : base(db) { }
 
         public ActionResult Index()

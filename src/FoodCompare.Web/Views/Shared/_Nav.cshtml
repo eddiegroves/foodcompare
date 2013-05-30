@@ -1,7 +1,9 @@
 ﻿<ul class="nav nav-list">
   <li class="nav-header">Tags</li>
-  @foreach (var tag in (List<FoodCompare.Web.Models.Tag>)ViewBag.Tags) {
-  <li>@Html.ActionLink(tag.Name, "Index", "Tagged", new { Name = tag.Name}, null)</li>
+  @if (ViewBag.Tags != null) {
+    foreach (var tag in (List<FoodCompare.Web.Models.Tag>) ViewBag.Tags) {
+      <li>@Html.ActionLink(tag.Name, "Index", "Tagged", new {Name = tag.Name}, null)</li>
+    }
   }
 
   <!-- Admin/editing -->
