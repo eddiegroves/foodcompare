@@ -32,6 +32,12 @@ namespace FoodCompare.Web.Controllers
             return RedirectToAction("Index", "Foods");
         }
 
+        public ActionResult Scraps(HttpPostedFileBase file)
+        {
+            Import<Scrap>(file);
+            return RedirectToAction("Index", "Scraps");
+        }
+
         private void Import<T>(HttpPostedFileBase file) where T : class, new()
         {
             using (var reader = new StreamReader(file.InputStream))

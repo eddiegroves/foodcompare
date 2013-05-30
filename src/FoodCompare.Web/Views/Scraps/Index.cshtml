@@ -21,6 +21,7 @@
     <td>
       @Html.ActionLink("Run", "Run", "Scraps", routeValues: new { scrap.Id }, htmlAttributes: new { @class = "btn" })
       @Html.ActionLink("Edit", "Edit", "Scraps", routeValues: new { scrap.Id }, htmlAttributes: new { @class = "btn" })
+      @Html.ActionLink("Create New", "AddFromScrap", "Scraps", routeValues: new { scrap.Id }, htmlAttributes: new { @class = "btn" })
       @Html.ActionLink("Delete", "Delete", "Scraps", routeValues: new { scrap.Id }, htmlAttributes: new { @class = "btn" })
     </td>
   </tr>}

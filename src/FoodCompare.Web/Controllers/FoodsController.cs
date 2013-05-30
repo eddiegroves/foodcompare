@@ -36,11 +36,17 @@ namespace FoodCompare.Web.Controllers
             return View();
         }
 
+        public ActionResult AddFromScrap(int id)
+        {
+            var food = db.GetById<Scrap>(id).Preview;
+            return View("Add", food);
+        }
+
         [HttpPost]
         public ActionResult Add(Food request)
         {
             db.Insert(request);
-            return View(request);
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edit(int id)

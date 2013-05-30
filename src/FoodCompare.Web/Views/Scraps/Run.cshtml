@@ -1,27 +1,24 @@
-﻿@model FoodCompare.Web.Models.Scrap
+﻿@model FoodCompare.Web.Controllers.ScrappedContent
 @{
-  var food = ViewBag.Food as FoodCompare.Web.Models.Food;
+    var errors = ViewBag.Errors as String;
+    var id = (int)ViewBag.Id;
 }
 
 <h2>Scrap Run</h2>
-<h3>@food.Brand @food.Product</h3>
 
-<dl class="dl-horizontal">
-  <dt>Url</dt>
-  <dd>@Model.Url</dd>
-  <dt>Request Status</dt>
-  <dd>OK</dd>
-  <dt>Time</dt>
-  <dd>1200ms</dd>
-  <dt>Errors</dt>
-  <dd>None</dd>
-</dl>
+@if (!String.IsNullOrEmpty(errors)) {
+  <h3>Errors</h3>
+  <pre>@errors</pre>
+}
 
-<h4>Preview</h4>
-<pre>Name: John West blahb blah blah
-Calories: 120
-Carbs: 0
-Protein: 32
-Fat: 1</pre>
+@if (Model.Food != null) {
+  <h3>Preview</h3>
+  <pre>@Model.Food.Dump()</pre>
 
-<a href="#" class="btn btn-primary">Apply To Food</a>
+  @Html.ActionLink("Create Food", "AddFromScrap", "Foods", new { id }, new { @class = "btn btn-primary" })
+}
+
+@if (!String.IsNullOrEmpty(Model.Messages)) {
+  <h3>Messages</h3>
+  <pre>@Model.Messages</pre>
+}

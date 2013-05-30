@@ -10,6 +10,10 @@
   <button class="btn">Export <strong>Foods</strong></button>
 }
 
+@using (Html.BeginForm("Scraps", "Export")) {
+  <button class="btn">Export <strong>Scraps</strong></button>
+}
+
 <h3>Import</h3>
 
 @using (Html.BeginForm("Tags", "Import", method: FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" })) {
@@ -22,6 +26,13 @@
 @using (Html.BeginForm("Foods", "Import", method: FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" })) {
   <label for="PostsFile">Foods</label>
   <button id="PostsFile" class="btn file-button">Choose File</button>
+  <input class="hide" name="file" type="file"/>
+  <button class="btn file-submit" disabled="disabled">Import <strong></strong></button>
+}
+
+@using (Html.BeginForm("Scraps", "Import", method: FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" })) {
+  <label for="ScrapsFile">Scraps</label>
+  <button id="ScrapsFile" class="btn file-button">Choose File</button>
   <input class="hide" name="file" type="file"/>
   <button class="btn file-submit" disabled="disabled">Import <strong></strong></button>
 }

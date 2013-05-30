@@ -32,6 +32,12 @@ namespace FoodCompare.Web.Controllers
             return new EmptyResult();
         }
 
+        public ActionResult Scraps(bool text = false)
+        {
+            Export<Scrap>(text);
+            return new EmptyResult();
+        }
+
         private void Export<T>(bool text) where T: class
         {
             new DbCsvExporter(_db).Write<T>(new StreamWriter(Response.OutputStream));
