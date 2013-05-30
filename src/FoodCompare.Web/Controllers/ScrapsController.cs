@@ -68,4 +68,18 @@ namespace FoodCompare.Web.Controllers
             return View(scrap);
         }
     }
+
+    public interface IContentScrapper
+    {
+        string Domain { get; }
+        ScrappedContent Scrap(string content);
+    }
+
+    public class ScrappedContent
+    {
+        public string Status { get; set; }
+        public string Time { get; set; }
+        public string Errors { get; set; }
+        public Food Food { get; set; }
+    }
 }
